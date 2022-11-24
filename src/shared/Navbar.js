@@ -7,6 +7,9 @@ const Navbar = () => {
   const {logout, user} = useContext(AuthContext)
   const handleLogOut = () =>{
     logout()
+    .then(()=>{
+      localStorage.removeItem('kenoBeco')
+    })
   }
 
   const menu = <>

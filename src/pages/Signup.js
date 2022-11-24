@@ -1,10 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link } from "react-router-dom"
-import { setAuthToken } from '../api/user';
+import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../context/Authprovider';
+import Spinner from '../spinner/Spinner';
+import { useState } from 'react';
 
 const Signup = () => {
+    const [error, setError] = useState('')
     const { signInWithGoogle,createUser,updateUserProfile,loading, setLoading } = useContext(AuthContext)
 
     const handleSignup = e => {
@@ -34,12 +37,20 @@ const Signup = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
+                    toast.success('user created')
+                    localStorage.setItem('kenoBeco', data.token)
+                    setLoading(false)
                 })
-                .catch(err => console.log(err))
+                .catch(err =>{
+                    console.log(err)
+                    setLoading(false)
+                })
             })
         })
         .catch(err => {
             console.log(err);
+            setError(err.message)
+            setLoading(false)
         })
     }
     const handleGoogleLogin = () => {
@@ -73,17 +84,20 @@ const Signup = () => {
                     </div>
                     <div className="space-y-1 text-sm">
                     <label for="password" className="block">Select who you are</label>
-                            <span class="_5k_2 _5dba">
+                            <span>
                                 <input required type="radio" name="userType" value="Buyer" />
-                                    <label >Buyer</label>
+                                    <label  className="ml-2 mr-2">Buyer</label>
                             </span>
-                            <span class="_5k_2 _5dba">
-                                <input required type="radio" name="userType" value="Seller" />
+                            <span >
+                                <input  className="ml-2 mr-2" required type="radio" name="userType" value="Seller" />
                                     <label>Seller</label>
                             </span>
                         
                     </div>
-                    <button className="block w-full p-3 text-center rounded-sm text-white bg-black ">Sign in</button>
+                   
+                      <button className="block w-full p-3 text-center rounded-sm text-white bg-black ">{loading ? <Spinner/> : 'Sign up'}</button>
+                      <p className="text-red-700">{error}</p>
+                   
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>

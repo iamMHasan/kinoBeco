@@ -1,14 +1,93 @@
 [
     {
         "productName": "Mount Bike",
-        "image" : "https://www.switchbacktravel.com/sites/default/files/articles%20/Mountain%20Bike%20%28Santa%20Cruz%20Bronson%20-%20m%29.jpg"
+        "image" : "https://www.switchbacktravel.com/sites/default/files/articles%20/Mountain%20Bike%20%28Santa%20Cruz%20Bronson%20-%20m%29.jpg",
+        "data" : [
+            {
+                "image" : "https://trek.scene7.com/is/image/TrekBicycleProducts/TK22_Web_MTB_Remedy_White_4X3?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440&fit=fit,1",
+                "name" : "Mountain Xr",
+                "location" : "Chattogram",
+                "resalePrice" : 12000,
+                "originalPrice" : 28000,
+                "yearUse" : 2,
+                "datePosted" : "23 dec 2022",
+                "sellerName" : "Mishel Obama"
+            },
+            {
+                "image" : "https://trek.scene7.com/is/image/TrekBicycleProducts/TK22_WEB_MTB_Buyers_Guide_4x3_Rail?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440&fit=fit,1",
+                "name" : "Mountain Plus",
+                "location" : "Chattogram",
+                "resalePrice" : 17000,
+                "originalPrice" : 30000,
+                "yearUse" : 3,
+                "datePosted" : "23 dec 2022",
+                "sellerName" : "Mishel Obama"
+            },
+            {
+                "image" : "https://trek.scene7.com/is/image/TrekBicycleProducts/TK22_WEB_MTB_Buyers_Guide_4x3_Powerfly?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440&fit=fit,1",
+                "name" : "Mountain XrS",
+                "location" : "Chattogram",
+                "resalePrice" : 18000,
+                "originalPrice" : 32000,
+                "yearUse" : 2,
+                "datePosted" : "23 dec 2022",
+                "sellerName" : "Mishel Obama"
+            }
+        ]
     },
     {
         "productName": "Road Bike",
-        "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu"
+        "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu",
+        "data" : [
+            {
+                "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu",
+                "name" : "Road Bike Plus",
+                "location" : "Chattogram",
+                "resalePrice" : 17000,
+                "originalPrice" : 30000,
+                "yearUse" : 3,
+                "datePosted" : "23 dec 2022",
+                "sellerName" : "Barak Obama"
+            },
+            {
+                "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu",
+                "name" : "Road Bike XR",
+                "location" : "Chattogram",
+                "resalePrice" : 19000,
+                "originalPrice" : 25000,
+                "yearUse" : 3,
+                "datePosted" : "23 dec 2022",
+                "sellerName" : "Barak Obama"
+            }
+        ]
     },
     {
         "productName" : "Folding Bike",
-        "image" : "https://cf.shopee.com.my/file/b49db5bd1b857998db1e734ce6a976c2"
+        "image" : "https://cf.shopee.com.my/file/b49db5bd1b857998db1e734ce6a976c2",
+        "data" : [
+            {
+                "productName": "Mount Bike",
+                "cataId" : "FoldingBike",
+                "image" : "https://static-01.daraz.com.bd/p/2fc2890acf10779f2f5c73e01d93c909.jpg",
+                "name" : "Folding Bike XR",
+                "location" : "Chattogram",
+                "resalePrice" : 19000,
+                "originalPrice" : 25000,
+                "yearUse" : 3,
+                "datePosted" : "18 dec 2022",
+                "sellerName" : "Barak Obama"
+            },
+            {
+                "productName": "Mount Bike",
+                "image" : "https://rukminim1.flixcart.com/image/416/416/km9ht3k0/cycle/n/q/g/26t-foldable-bicycle-cycle-26-t-mountain-cycle-with-21-gear-26-original-imagf75czyjegppg.jpeg?q=70",
+                "name" : "Folding Bike 342",
+                "location" : "Chattogram",
+                "resalePrice" : 40000,
+                "originalPrice" : 52000,
+                "yearUse" : 3,
+                "datePosted" : "23 dec 2022",
+                "sellerName" : "Barak Obama"
+            }
+        ]
     }
 ]

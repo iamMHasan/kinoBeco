@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const ProudctCataCard = ({ categories }) => {
     const { productName, image, _id } = categories
     return (
-        <Link to={`/allCategories/${productName}:`}>
+        <Link to={`/allCategories/${_id}`}>
             <div className="card h-[20rem] bg-base-100 shadow-xl image-full">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body flex justify-center items-center">
