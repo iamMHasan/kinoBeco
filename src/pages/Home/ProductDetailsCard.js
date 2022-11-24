@@ -1,8 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
 import { HiOutlineLocationMarker, HiUser } from "react-icons/hi";
+import BookingModal from '../../component/BookingModal/BookingModal';
 
-const ProductDetailsCard = ({ productDetails }) => {
-    console.log(productDetails);
+const ProductDetailsCard = ({ productDetails, setSelectedProduct }) => {
+
     const { image, location, name, resalePrice, originalPrice, sellerName, yearUse, datePosted } = productDetails
     return (
         <>
@@ -37,7 +39,10 @@ const ProductDetailsCard = ({ productDetails }) => {
 
                         <p className="text-xs">Date posted : <span className='text-xl text-green-700'>{datePosted}</span></p>
                     </div>
-                <button className='btn btn-dark  mt-4'>BOOK NOW</button>
+
+                    <label
+                        onClick={() => setSelectedProduct(productDetails)}
+                        htmlFor="my-modal-3" className="btn my-4">Book Now</label>
                 </div>
             </div>
         </>
