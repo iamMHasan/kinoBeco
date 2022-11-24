@@ -5,6 +5,8 @@
 //     }
 //     const url = `http://localhost:5000/${email}`
 
+import { useEffect, useState } from "react"
+
 //     const res = await fetch(url, {
 //         method: 'POST',
 //         headers: {
@@ -16,22 +18,17 @@
 //     return data
 // }
 
-export const setAuthToken = user => {
-    const currentUser = {
-      email: user.email,
-    }
-    //   Save user in db & get token
-    fetch(`$http://localhost:5000/user/${user}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(currentUser),
+export const useUserType = email => {
+  const [userType, setUserType] = useState(null)
+  useEffect(()=>{
+   if(email){
+    fetch(`http://localhost:5000/user/${email}`)
+    .then(res => res.json())
+    .then(data => {
+      setUserType(data.userType)
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        //Save token in LocalStorage
-        localStorage.setItem('kenoBeco-token', data.token)
-      })
-  }
+    .catch(err => console.log(err))
+   }
+  },[email])
+  return [userType]
+}

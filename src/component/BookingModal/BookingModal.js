@@ -22,6 +22,7 @@ const BookingModal = ({ selectedProduct,setSelectedProduct }) => {
             userName: user?.displayName,
             userEmail: user?.email,
             location,
+            image,
             resalePrice,
         }
         fetch(`http://localhost:5000/myOrders`, {

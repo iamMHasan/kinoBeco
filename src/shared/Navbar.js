@@ -4,21 +4,27 @@ import { Link } from "react-router-dom"
 import { AuthContext } from '../context/Authprovider';
 
 const Navbar = () => {
-  const {logout, user} = useContext(AuthContext)
-  const handleLogOut = () =>{
+  const { logout, user } = useContext(AuthContext)
+  const handleLogOut = () => {
     logout()
-    .then(()=>{
-      localStorage.removeItem('kenoBeco')
-    })
+      .then(() => {
+        localStorage.removeItem('kenoBeco')
+      })
   }
 
   const menu = <>
-  {
-    user?.uid ? 
-    <li><Link onClick={handleLogOut}>Log out</Link></li> :
-    <li><Link to='/login'>Login</Link></li>
+    {
+      user?.uid ?
+        <>
+          <li><Link onClick={handleLogOut}>Log out</Link></li>
+          <li><Link to='/dashboard'>Dashboard</Link></li>
+        </>
+        :
+        <>
+          <li><Link to='/login'>Login</Link></li>
+        </>
 
-  }
+    }
   </>
   return (
     <div className="navbar bg-base-100">
@@ -35,11 +41,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-        {menu}
+          {menu}
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn">Get started</Link>
+      <label htmlFor="my-drawer-2" className="btn btn-dark drawer-button lg:hidden">dashboard</label>
       </div>
     </div>
   );
