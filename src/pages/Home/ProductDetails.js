@@ -9,16 +9,23 @@ const ProductDetails = () => {
     const productSubCata = prodcuts.data
     console.log(selectedProduct);
     return (
-        <div>
+        <>
+            <div>
+                {
+                    productSubCata.map(productDetails => <ProductDetailsCard
+                        key={productDetails._id}
+                        setSelectedProduct={setSelectedProduct}
+                        productDetails={productDetails}
+                    ></ProductDetailsCard>)
+                }
+            </div>
             {
-                productSubCata.map(productDetails =><ProductDetailsCard
-                key={productDetails._id}
+                selectedProduct && <BookingModal 
+                selectedProduct={selectedProduct}
                 setSelectedProduct={setSelectedProduct}
-                productDetails={productDetails}
-                ></ProductDetailsCard> )
+                ></BookingModal>
             }
-             <BookingModal selectedProduct={selectedProduct}/>
-        </div>
+        </>
     );
 };
 

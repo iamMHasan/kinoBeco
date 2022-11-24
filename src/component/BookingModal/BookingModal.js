@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/Authprovider';
+import {toast} from 'react-hot-toast'
+import Spinner from '../../spinner/Spinner';
 
 
-const BookingModal = ({ selectedProduct }) => {
+const BookingModal = ({ selectedProduct,setSelectedProduct }) => {
+    const [loading, setLoading] = useState(false)
+   
     const { user } = useContext(AuthContext)
     const { image, location, name, resalePrice, originalPrice, sellerName, yearUse, datePosted, _id } = selectedProduct
     const handleBooking = (e) => {
+        setLoading(true)
         e.preventDefault()
         const form = e.target
 
 
         const myOrdersInfo = {
-            orderId : _id,
+            order : _id,
             productName : name,
             userName: user?.displayName,
             userEmail: user?.email,
@@ -29,8 +34,16 @@ const BookingModal = ({ selectedProduct }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data.acknowledged){
+                    toast.success('Booking succssfull')
+                    setSelectedProduct(null)
+                    setLoading(false)
+                }
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                setLoading(false)
+                console.log(err)
+            })
     }
     return (
         <>
@@ -63,7 +76,9 @@ const BookingModal = ({ selectedProduct }) => {
                             <label htmlFor="">Seller Phone</label>
                             <input defaultValue={"01647572449"} readOnly type="text" placeholder="Type here" className="input input-bordered input-accent w-full mt-1" />
                         </div>
-                        <button onClick={handleBooking} className="btn-dark">Confirm Booking</button>
+                        <button onClick={handleBooking} className="btn btn-dark">{
+                            loading ? <Spinner/> : 'Confirm Booking'
+                        }</button>
                     </form>
                 </div>
             </div>
