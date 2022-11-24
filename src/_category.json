@@ -1,0 +1,14 @@
+[
+    {
+        "productName": "Mount Bike",
+        "image" : "https://www.switchbacktravel.com/sites/default/files/articles%20/Mountain%20Bike%20%28Santa%20Cruz%20Bronson%20-%20m%29.jpg"
+    },
+    {
+        "productName": "Road Bike",
+        "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu"
+    },
+    {
+        "productName" : "Folding Bike",
+        "image" : "https://cf.shopee.com.my/file/b49db5bd1b857998db1e734ce6a976c2"
+    }
+]

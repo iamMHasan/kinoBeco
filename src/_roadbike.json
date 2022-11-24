@@ -1,0 +1,22 @@
+[
+    {
+        "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu",
+        "name" : "Road Bike Plus",
+        "location" : "Chattogram",
+        "resalePrice" : 17000,
+        "originalPrice" : 30000,
+        "yearUse" : 3,
+        "datePosted" : "23 dec 2022",
+        "sellerName" : "Barak Obama"
+    },
+    {
+        "image" : "https://cyclist.b-cdn.net/sites/cyclist/files/styles/article_main_wide_image/public/2021/11/pinarello-dogma-f-1.jpg?itok=hYRlGtTu",
+        "name" : "Road Bike XR",
+        "location" : "Chattogram",
+        "resalePrice" : 19000,
+        "originalPrice" : 25000,
+        "yearUse" : 3,
+        "datePosted" : "23 dec 2022",
+        "sellerName" : "Barak Obama"
+    }
+]

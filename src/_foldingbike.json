@@ -1,0 +1,25 @@
+[
+    {
+        "productName": "Mount Bike",
+        "cataId" : "FoldingBike",
+        "image" : "https://static-01.daraz.com.bd/p/2fc2890acf10779f2f5c73e01d93c909.jpg",
+        "name" : "Folding Bike XR",
+        "location" : "Chattogram",
+        "resalePrice" : 19000,
+        "originalPrice" : 25000,
+        "yearUse" : 3,
+        "datePosted" : "18 dec 2022",
+        "sellerName" : "Barak Obama"
+    },
+    {
+        "productName": "Mount Bike",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/km9ht3k0/cycle/n/q/g/26t-foldable-bicycle-cycle-26-t-mountain-cycle-with-21-gear-26-original-imagf75czyjegppg.jpeg?q=70",
+        "name" : "Folding Bike 342",
+        "location" : "Chattogram",
+        "resalePrice" : 40000,
+        "originalPrice" : 52000,
+        "yearUse" : 3,
+        "datePosted" : "23 dec 2022",
+        "sellerName" : "Barak Obama"
+    }
+]
