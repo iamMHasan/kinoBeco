@@ -5,6 +5,7 @@ import ProductDetails from '../pages/Home/ProductDetails';
 import ProudctCataCard from '../pages/Home/ProudctCataCard';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
+import PrivateRoute from '../privateRoute.js/PrivateRoute';
 import Error from '../shared/Error';
 
 
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/allCategories/:id',
-        element: <ProductDetails />,
+        element: <PrivateRoute><ProductDetails /></PrivateRoute>,
         loader : ({params}) => fetch(`http://localhost:5000/allCategories/${params.id}`)
       },
       {

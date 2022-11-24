@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import {Link} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import { AuthContext } from '../context/Authprovider';
 import toast from 'react-hot-toast';
 import { setAuthToken } from '../api/user';
@@ -9,6 +9,9 @@ import Spinner from '../spinner/Spinner';
 const Login = () => {
     const [error, setError] = useState('')
     const {signin,setLoading,loading} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/'
 
     const handleLogin = e =>{
         setLoading(true)
@@ -33,6 +36,8 @@ const Login = () => {
                 })
                 .then(res => res.json())
                 .then(data => {
+                    navigate(from, { replace: true })
+                    form.reset()
                     console.log(data);
                     localStorage.setItem('kenoBeco', data.token)
                     setLoading(false)

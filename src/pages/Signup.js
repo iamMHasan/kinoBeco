@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../context/Authprovider';
 import Spinner from '../spinner/Spinner';
@@ -9,6 +9,9 @@ import { useState } from 'react';
 const Signup = () => {
     const [error, setError] = useState('')
     const { signInWithGoogle,createUser,updateUserProfile,loading, setLoading } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/'
 
     const handleSignup = e => {
         setLoading(true)
@@ -39,6 +42,8 @@ const Signup = () => {
                     console.log(data);
                     toast.success('user created')
                     localStorage.setItem('kenoBeco', data.token)
+                    form.reset()
+                    navigate(from, { replace: true })
                     setLoading(false)
                 })
                 .catch(err =>{

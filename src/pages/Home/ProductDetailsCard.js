@@ -6,7 +6,7 @@ const ProductDetailsCard = ({ productDetails }) => {
     const { image, location, name, resalePrice, originalPrice, sellerName, yearUse, datePosted } = productDetails
     return (
         <>
-            <div className='p-3 md:p-0 md:flex items-center justify-center gap-3 border-y-2 my-3'>
+            <div className='p-3 md:p-0 md:flex items-center justify-center gap-3 border-y-2 my-3 hover:bg-slate-200'>
                 <div>
                     <img src={image} className='h-96 w-96' alt="" />
                 </div>
@@ -36,8 +36,8 @@ const ProductDetailsCard = ({ productDetails }) => {
                         <p className="text-xs">Years used :<span className='text-xl text-green-700'>{yearUse}</span></p>
 
                         <p className="text-xs">Date posted : <span className='text-xl text-green-700'>{datePosted}</span></p>
-
                     </div>
+                <button className='btn btn-dark  mt-4'>BOOK NOW</button>
                 </div>
             </div>
         </>
