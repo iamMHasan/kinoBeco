@@ -9,7 +9,11 @@ const Dashboard = () => {
     const { data: myAllOrder = [] } = useQuery({
         queryKey: ['myOrders'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myOrders?email=${user?.email}`)
+            const res = await fetch(`http://localhost:5000/myOrders?email=${user?.email}`,{
+                headers : {
+                     authorization : `bearer ${localStorage.getItem('kenoBeco')}`
+                }
+            })
             const data = await res.json()
             return data
         }
@@ -17,14 +21,6 @@ const Dashboard = () => {
     console.log(myAllOrder);
     return (
         <div className="table w-full">
-            {/* <thead >
-                <tr>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                    <th></th>
-                </tr>
-            </thead> */}
             <thead>
                 <tr>
                     <th></th>

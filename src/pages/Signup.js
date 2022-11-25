@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 const Signup = () => {
     const [error, setError] = useState('')
+    const {user} = useContext(AuthContext)
     const { signInWithGoogle,createUser,updateUserProfile,loading, setLoading } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
@@ -43,7 +44,6 @@ const Signup = () => {
                     console.log(data);
                     toast.success('user created')
                     localStorage.setItem('kenoBeco', data.token)
-                    form.reset()
                     navigate(from, { replace: true })
                     setLoading(false)
                 })
@@ -62,7 +62,32 @@ const Signup = () => {
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
-                console.log(result);
+                const user = result.user
+                console.log(user);
+                const userInfo = {
+                    email : user?.email,
+                    userType : 'Buyer',
+                    displayName : user?.displayName,
+                }
+                fetch('http://localhost:5000/users',{
+                    method : 'POST',
+                    headers : {
+                        'content-type' : 'application/json'
+                    },
+                    body : JSON.stringify(userInfo)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    toast.success('user created')
+                    localStorage.setItem('kenoBeco', data.token)
+                    navigate(from, { replace: true })
+                    setLoading(false)
+                })
+                .catch(err =>{
+                    console.log(err)
+                    setLoading(false)
+                })
             })
             .catch(err => console.log(err))
     }
