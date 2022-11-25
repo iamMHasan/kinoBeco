@@ -15,7 +15,7 @@ const DashBoardLayout = () => {
             <div className="drawer-content">
                 {/* <!-- Page content here --> */}
                 <Outlet />
-               
+
 
             </div>
             <div className="drawer-side">
@@ -25,6 +25,14 @@ const DashBoardLayout = () => {
                     {
                         usertype === 'Buyer' && (
                             <li><Link to='/dashboard/myorders'>My orders</Link></li>
+                        )
+                    }
+                    {
+                        usertype === 'Seller' && (
+                            <>
+                                <li><Link to='/dashboard/myproducts'>My Products</Link></li>
+                                <li><Link to='/dashboard/addaproduct'>Add A Product</Link></li>
+                            </>
                         )
                     }
                 </ul>
