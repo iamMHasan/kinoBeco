@@ -26,7 +26,8 @@ const Signup = () => {
             const user = result.user 
             const userInfo = {
                 email : user?.email,
-                userType : userType
+                userType : userType,
+                displayName : name,
             }
             updateUserProfile(name)
             .then(()=>{

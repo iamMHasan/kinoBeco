@@ -35,6 +35,13 @@ const DashBoardLayout = () => {
                             </>
                         )
                     }
+                    {
+                        usertype === 'admin' && (
+                            <>
+                                <li><Link to='/dashboard/allUsers'>All Users</Link></li>
+                            </>
+                        )
+                    }
                 </ul>
 
             </div>
