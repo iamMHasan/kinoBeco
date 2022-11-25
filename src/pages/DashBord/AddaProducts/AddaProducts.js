@@ -21,35 +21,48 @@ const AddaProducts = () => {
         const description = form.description.value
         const condition = form.condition.value
         const category = form.category.value
-        console.log(productName, mobile, location, purcahseyear, description, condition,category);
+        const image = form.file.files[0]
+        // console.log(productName, mobile, location, purcahseyear, description, condition,category);
+        console.log(image);
 
-        const addproductInfo = {
-            productName,
-            mobile,
-            location,
-            purcahseyear,
-            description,
-            condition,
-            category,
-            email : user?.email
-        }
-        fetch(`http://localhost:5000/addAproduct`,{
+        const picform = new FormData()
+        picform.append('image', image )
+
+        fetch("https://api.imgbb.com/1/upload?key=6fe1164c2c0eeca68905e318bf8d48ca",{
             method : 'POST',
-            headers : {
-                'content-type' : 'application/json'
-            },
-            body : JSON.stringify(addproductInfo)
+            body : picform
         })
         .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            toast.success('Proudct added successfully')
-            navigate("/dashboard/myproducts")
-            setLoading(false)
-        })
-        .catch(err => {
-            console.log(err);
-            setLoading(false)
+        .then(data =>{
+            const addproductInfo = {
+                productName,
+                mobile,
+                location,
+                purcahseyear,
+                description,
+                condition,
+                category,
+                email : user?.email,
+                picform : data.url
+            }
+            fetch(`http://localhost:5000/addAproduct`,{
+                method : 'POST',
+                headers : {
+                    'content-type' : 'application/json'
+                },
+                body : JSON.stringify(addproductInfo)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Proudct added successfully')
+                navigate("/dashboard/myproducts")
+                setLoading(false)
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false)
+            })
         })
     }
     return (
@@ -75,6 +88,10 @@ const AddaProducts = () => {
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Descriptions</label>
                     <textarea type="text" placeholder="description" name='description' className="input input-bordered input-accent w-full mt-1" />
+                </div>
+                <div className='flex flex-col py-2'>
+                    <label htmlFor="">Add a picture</label>
+                    <input accept="image/*" type="file" name='file'  />
                 </div>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Select condition</label>

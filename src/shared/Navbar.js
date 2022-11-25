@@ -47,6 +47,9 @@ const Navbar = () => {
       <div className="navbar-end">
       <label htmlFor="my-drawer-2" className="btn btn-dark drawer-button lg:hidden">dashboard</label>
       </div>
+      {
+        user?.uid && <p className="hidden text-green-700 md:block">{user?.email}</p>
+      }
     </div>
   );
 };

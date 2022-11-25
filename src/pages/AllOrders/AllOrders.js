@@ -7,14 +7,6 @@ const AllOrders = ({ myOrders }) => {
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
-                {/* <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Action</th>
-                        <th></th>
-                    </tr>
-                </thead> */}
                 <tbody>
                     <tr>
                         <td>
