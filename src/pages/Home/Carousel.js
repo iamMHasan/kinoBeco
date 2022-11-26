@@ -5,7 +5,7 @@ import img3 from '../../image/img3.jpg'
 
 const Carousel = () => {
   return (
-    <div className="carousel w-full h-[50vh]">
+    <div className="carousel w-full h-[20vh] md:h-[50vh]">
       <div id="slide1" className="carousel-item relative w-full">
         <img src={img3} className="w-full" alt='' />
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

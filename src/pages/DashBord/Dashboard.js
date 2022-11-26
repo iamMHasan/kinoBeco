@@ -3,8 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import AllOrders from '../AllOrders/AllOrders';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/Authprovider';
+import useTitle from '../../hooks/useTitle';
 
 const Dashboard = () => {
+    useTitle('Dashboard')
     const { user } = useContext(AuthContext)
     const { data: myAllOrder = [] } = useQuery({
         queryKey: ['myOrders'],

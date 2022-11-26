@@ -8,7 +8,7 @@ const Allusers = () => {
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/users`,{
                 headers : {
-                    authorization : `bearer ${localStorage.getItem('kenoBeco')}`
+                    authorization : `bearer ${localStorage.getItem('kenoBeco')}`,
                 }
             })
             const data = await res.json()
@@ -35,7 +35,7 @@ const Allusers = () => {
         fetch(`http://localhost:5000/users/${id}`,{
             method : 'PUT',
             headers : {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
             },
             // body : JSON.stringify({})
         })

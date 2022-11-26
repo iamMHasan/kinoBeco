@@ -7,6 +7,7 @@ import AddaProducts from '../pages/DashBord/AddaProducts/AddaProducts';
 import Allusers from '../pages/DashBord/Allusers/Allusers';
 import Dashboard from '../pages/DashBord/Dashboard';
 import MyProducts from '../pages/DashBord/MyProducts/MyProducts';
+import Welcome from '../pages/DashBord/Welcome';
 import Home from '../pages/Home/Home';
 import ProductDetails from '../pages/Home/ProductDetails';
 import ProudctCataCard from '../pages/Home/ProudctCataCard';
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
         errorElement: <Error />,
         element : <PrivateRoute><DashBoardLayout/></PrivateRoute>,
         children : [
+          {
+            path : '/dashboard',
+            element : <Welcome/>
+          },
           {
             path : '/dashboard/myorders',
             element : <Dashboard/>
