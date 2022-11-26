@@ -31,6 +31,22 @@ const Allusers = () => {
         })
         .catch(err => console.log(err))
     }
+    const handleMakeAdmin = id =>{
+        fetch(`http://localhost:5000/users/${id}`,{
+            method : 'PUT',
+            headers : {
+                'content-type' : 'application/json'
+            },
+            // body : JSON.stringify({})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            toast.success('Made Admin')
+            refetch()
+        })
+        .catch(err => console.log(err))
+    }
     return (
         <table className="table table-zebra w-full">
         <thead>
@@ -40,6 +56,7 @@ const Allusers = () => {
                 <th>Email</th>
                 <th>User Role</th>
                 <th>Action</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +70,7 @@ const Allusers = () => {
                         <td>{user?.email}</td>
                         <td>{user?.userType}</td>
                         <td><button onClick={() => handleDelete(user._id)} className="btn btn-ghost text-red-700">Delete User</button></td>
+                        <td><button onClick={() => handleMakeAdmin(user._id)} className="btn btn-ghost btn-xs text-green-700">Make Admin</button></td>
                     </tr>
 
                 ))

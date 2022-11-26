@@ -14,6 +14,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import PrivateRoute from '../privateRoute.js/PrivateRoute';
 import Error from '../shared/Error';
+import Footer from '../shared/Footer';
 
 
 export const router = createBrowserRouter([
@@ -48,7 +49,12 @@ export const router = createBrowserRouter([
         element : <Blog/>
       },
       {
+        path : '/footer',
+        element : <Footer/>
+      },
+      {
         path : '/dashboard',
+        errorElement: <Error />,
         element : <PrivateRoute><DashBoardLayout/></PrivateRoute>,
         children : [
           {

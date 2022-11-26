@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { HiOutlineLocationMarker, HiUser } from "react-icons/hi";
 import BookingModal from '../../component/BookingModal/BookingModal';
+import { GoCheck } from "react-icons/go";
 
 const ProductDetailsCard = ({ productDetails, setSelectedProduct }) => {
 
@@ -18,7 +19,7 @@ const ProductDetailsCard = ({ productDetails, setSelectedProduct }) => {
                         <hr className='my-3' />
                         <div className="flex items-center justify-center gap-3 ">
                             <div className="">
-                                <h1 className="text-xs flex items-center justify-center gap-1"><HiUser className='text-xl' /> <span className='text-xl text-green-700'>{sellerName}</span> </h1>
+                                <h1 className="text-xs flex items-center justify-center gap-1"><HiUser className='text-xl' /> <span className='text-xl text-green-700'>{sellerName}</span> <GoCheck className='text-xl text-green-700'/> </h1>
                             </div>
                             <hr className='my-3' />
                             <div>
