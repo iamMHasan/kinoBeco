@@ -40,10 +40,13 @@ const DashBoardLayout = () => {
                     {
                         usertype === 'admin' && (
                             <>
-                                <li><Link to='/dashboard/allUsers'>All Users</Link></li>
+                                {/* <li><Link to='/dashboard/allUsers'>All Users</Link></li> */}
                                 <li><Link to='/dashboard/myorders'>My orders</Link></li>
                                 <li><Link to='/dashboard/myproducts'>My Products</Link></li>
                                 <li><Link to='/dashboard/addaproduct'>Add A Product</Link></li>
+                                <li><Link to='/dashboard/allBuyers'>All Buyers</Link></li>
+                                <li><Link to='/dashboard/allSellers'>All Sellers</Link></li>
+                                <li><Link to='/dashboard/allAdmin'>All Admin</Link></li>
                             </>
                         )
                     }

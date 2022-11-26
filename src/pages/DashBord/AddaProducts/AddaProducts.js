@@ -14,13 +14,13 @@ const AddaProducts = () => {
         setLoading(true)
         e.preventDefault()
         const form = e.target
-        const productName = form.productname.value
+        const Prdname = form.Prdname.value
         const mobile = form.mobile.value
         const location = form.location.value
         const purcahseyear = form.purcahseyear.value
         const description = form.description.value
         const condition = form.condition.value
-        const category = form.category.value
+        const productName = form.category.value
         const image = form.file.files[0]
         // console.log(productName, mobile, location, purcahseyear, description, condition,category);
         console.log(image);
@@ -35,13 +35,14 @@ const AddaProducts = () => {
         .then(res => res.json())
         .then(data =>{
             const addproductInfo = {
-                productName,
+                Prdname,
                 mobile,
                 location,
                 purcahseyear,
                 description,
                 condition,
-                category,
+                productName,
+                postedDate : new Date(),
                 email : user?.email,
                 picform : data.url
             }
@@ -71,7 +72,7 @@ const AddaProducts = () => {
             <form onSubmit={handleAddProduct}>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Product Name</label>
-                    <input type="text" name='productname' placeholder="product" className="input input-bordered input-accent w-full mt-1" />
+                    <input type="text" name='Prdname' placeholder="product" className="input input-bordered input-accent w-full mt-1" />
                 </div>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Mobile Number</label>
@@ -114,15 +115,15 @@ const AddaProducts = () => {
                     <label htmlFor="category">Select Category</label>
                     <div className="flex gap-3">
                         <span>
-                            <input required type="radio" name="category" value="Mountbike" />
+                            <input required type="radio" name="category" value="Mount Bike" />
                             <label className="ml-2 mr-2">Mount Bike</label>
                         </span>
                         <span>
-                            <input required type="radio" name="category" value="Roadbike" />
+                            <input required type="radio" name="category" value="Road Bike" />
                             <label className="ml-2 mr-2">Road Bike</label>
                         </span>
                         <span >
-                            <input className="ml-2 mr-2" required type="radio" name="category" value="Foldbike" />
+                            <input className="ml-2 mr-2" required type="radio" name="category" value="Folding Bike" />
                             <label>Fold Bike</label>
                         </span>
                     </div>

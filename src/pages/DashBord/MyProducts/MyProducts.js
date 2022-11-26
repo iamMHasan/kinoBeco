@@ -69,8 +69,8 @@ const MyProducts = () => {
 
                             <tr key={product._id}>
                                 <th>{i + 1}</th>
+                                <td>{product.Prdname}</td>
                                 <td>{product.productName}</td>
-                                <td>{product.category}</td>
                                 <td>{product.email}</td>
                                 <td><>
                                     <p className='badge badge-ghost badge-sm'>Available</p>

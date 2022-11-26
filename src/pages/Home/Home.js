@@ -1,4 +1,5 @@
 import React from 'react';
+import Stat from '../../component/BookingModal/Stat/Stat';
 import useTitle from '../../hooks/useTitle';
 import Carousel from './Carousel';
 import ProductCatagory from './ProductCatagory';
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
             <Carousel/>
             <ProductCatagory/>
+            <Stat/>
         </div>
     );
 };
