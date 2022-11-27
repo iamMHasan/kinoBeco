@@ -19,16 +19,19 @@ import { useEffect, useState } from "react"
 // }
 
 export const useUserType = email => {
+  const [loading, setLoading] = useState(false)
   const [userType, setUserType] = useState(null)
   useEffect(()=>{
+    setLoading(true)
    if(email){
     fetch(`http://localhost:5000/user/${email}`)
     .then(res => res.json())
     .then(data => {
       setUserType(data.userType)
+      setLoading(false)
     })
     .catch(err => console.log(err))
    }
   },[email])
-  return [userType]
+  return [userType,loading]
 }

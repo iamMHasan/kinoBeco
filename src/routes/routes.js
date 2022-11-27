@@ -10,6 +10,7 @@ import AllBuyers from '../pages/DashBord/Allusers/AllBuyers';
 import Allusers from '../pages/DashBord/Allusers/Allusers';
 import Dashboard from '../pages/DashBord/Dashboard';
 import MyProducts from '../pages/DashBord/MyProducts/MyProducts';
+import MyWishlist from '../pages/DashBord/MyWishlist/MyWishlist';
 import Welcome from '../pages/DashBord/Welcome';
 import Home from '../pages/Home/Home';
 import ProductDetails from '../pages/Home/ProductDetails';
@@ -92,6 +93,10 @@ export const router = createBrowserRouter([
           {
             path : '/dashboard/allAdmin',
             element : <AllAdmin/>
+          },
+          {
+            path : '/dashboard/mywishlist',
+            element : <MyWishlist/>
           }
         ]
       }

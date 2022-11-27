@@ -3,8 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 const AllAdmin = () => {
-    const {data : AllBuyers = [], refetch } = useQuery({
-        queryKey : [''],
+    const {data : AllBuyers = [], refetch, isLoading } = useQuery({
+        queryKey : ['users'],
         queryFn : async () =>{
             const res = await fetch(`http://localhost:5000/users?userType=admin`,{
                 headers : {
@@ -48,7 +48,9 @@ const AllAdmin = () => {
     }
     return (
         <table className="table table-zebra w-full">
-        <thead>
+        {isLoading ? 'loading all admin' : (
+            <>
+            <thead>
             <tr>
                 <th></th>
                 <th>User Name</th>
@@ -76,6 +78,8 @@ const AllAdmin = () => {
             }
 
         </tbody>
+            </>
+        )}
     </table>
     );
 };

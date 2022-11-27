@@ -9,15 +9,17 @@ import Navbar from '../shared/Navbar';
 const DashBoardLayout = () => {
     useTitle('Dashboard')
     const { user } = useContext(AuthContext)
-    const [usertype] = useUserType(user?.email)
+    const [usertype,loading] = useUserType(user?.email)
     console.log(usertype);
 
     return (
         <div className="drawer drawer-mobile">
-            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+           {loading ? <div className='flex justify-center items-center text-xl'>'loading dashboard........'</div> : (
+            <>
+             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* <!-- Page content here --> */}
-                
+
                 <Outlet />
             </div>
             <div className="drawer-side">
@@ -26,7 +28,10 @@ const DashBoardLayout = () => {
                     {/* <!-- Sidebar content here --> */}
                     {
                         usertype === 'Buyer' && (
-                            <li><Link to='/dashboard/myorders'>My orders</Link></li>
+                            <>
+                                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                                <li><Link to='/dashboard/mywishlist'>My Wishlist</Link></li>
+                            </>
                         )
                     }
                     {
@@ -53,6 +58,8 @@ const DashBoardLayout = () => {
                 </ul>
 
             </div>
+            </>
+           )}
         </div>
     );
 };

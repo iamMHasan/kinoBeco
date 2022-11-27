@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../context/Authprovider';
 import { useQuery } from '@tanstack/react-query';
-import AllOrders from '../AllOrders/AllOrders';
-import { useContext } from 'react';
-import { AuthContext } from '../../context/Authprovider';
-import useTitle from '../../hooks/useTitle';
+import useTitle from '../../../hooks/useTitle';
 import toast from 'react-hot-toast';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
-const Dashboard = () => {
-    useTitle('Dashboard')
+const MyWishlist = () => {
+    useTitle('Mywishlist')
+    // const [wishlist, setWishlist] = useState([])
     const { user } = useContext(AuthContext)
-    const { data: myAllOrder = [],refetch, isLoading } = useQuery({
-        queryKey: ['myOrders'],
+    const { data: wishlist = [],refetch , isLoading} = useQuery({
+        queryKey: ['wishlist', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myOrders?email=${user?.email}`,{
+            const res = await fetch(`http://localhost:5000/wishlist?email=${user?.email}`,{
                 headers : {
                      authorization : `bearer ${localStorage.getItem('kenoBeco')}`
                 }
@@ -21,8 +22,17 @@ const Dashboard = () => {
             return data
         }
     })
+    // useEffect(()=>{
+    //     fetch(`http://localhost:5000/wishlist?email=${user?.email}`,{
+    //             headers : {
+    //                  authorization : `bearer ${localStorage.getItem('kenoBeco')}`
+    //             }
+    //         })
+    //         .then(res => res.json())
+    //         .then(data => setWishlist(data) )
+    // },[user?.email])
     const handleDeleteOrder = id =>{
-        fetch(`http://localhost:5000/myOrders/${id}`,{
+        fetch(`http://localhost:5000/wishlist/${id}`,{
             method : 'DELETE'
         })
         .then(res => res.json())
@@ -33,11 +43,11 @@ const Dashboard = () => {
         })
         .catch(err => console.log(err))
     }
-    console.log(myAllOrder);
+    console.log(wishlist);
     return (
         <div className="table w-full">
-           {
-            isLoading ? 'loading my ordrs' : (
+          {
+            isLoading ? 'loading wishlist' : (
                 <>
                  <thead>
                 <tr>
@@ -49,7 +59,7 @@ const Dashboard = () => {
                 </tr>
             </thead>
             {
-                myAllOrder.map((myOrders, i) => (
+                wishlist.map((myOrders, i) => (
                     <tr key={myOrders._id}>
                         <th>{i + 1}</th>
                         <th>
@@ -59,18 +69,18 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </th>
-                        <th>{myOrders.productName}</th>
+                        <th>{myOrders.name}</th>
                         <th>{myOrders.resalePrice}</th>
-                        <th><div className="btn  btn-ghost">pay</div></th>
+                        <th><div className="btn btn-ghost">Book Now</div></th>
                         <th><div onClick={()=>handleDeleteOrder(myOrders._id)} className="btn  btn-xs">delete</div></th>
                     </tr>
                 ))
             }
                 </>
             )
-           }
+          }
         </div>
     );
 };
 
-export default Dashboard;
+export default MyWishlist;

@@ -7,7 +7,7 @@ import { useState } from 'react';
 const MyProducts = () => {
     const [postedProduct, setPostedProduct] = useState({})
     const { user } = useContext(AuthContext)
-    const { data: myproducts = [], refetch } = useQuery({
+    const { data: myproducts = [], refetch, isLoading } = useQuery({
         queryKey: [],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/addAproduct?email=${user?.email}`,{
@@ -51,7 +51,9 @@ const MyProducts = () => {
 
     return (
         <div className="overflow-x-auto">
-            <table className="table table-zebra w-full">
+            {isLoading ? 'loading' : (
+                <>
+                <table className="table table-zebra w-full">
                 <thead>
                     <tr>
                         <th></th>
@@ -84,6 +86,8 @@ const MyProducts = () => {
 
                 </tbody>
             </table>
+                </>
+            )}
         </div>
     );
 };
