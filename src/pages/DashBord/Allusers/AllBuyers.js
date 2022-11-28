@@ -6,7 +6,7 @@ const AllBuyers = () => {
     const { data: AllBuyers = [], refetch, isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?userType=Buyer`, {
+            const res = await fetch(`https://assignement-12-server.vercel.app/users?userType=Buyer`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('kenoBeco')}`,
                 }
@@ -16,7 +16,7 @@ const AllBuyers = () => {
         }
     })
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://assignement-12-server.vercel.app/users/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const AllBuyers = () => {
             .catch(err => console.log(err))
     }
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://assignement-12-server.vercel.app/users/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

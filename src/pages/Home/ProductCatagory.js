@@ -8,7 +8,7 @@ const ProductCatagory = () => {
     const [allCategories, setAllcategories] = useState([])
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/allCategories')
+        fetch('https://assignement-12-server.vercel.app/allCategories')
             .then(res => res.json())
             .then(data => {
                 setAllcategories(data)

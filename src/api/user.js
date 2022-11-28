@@ -3,7 +3,7 @@
 //     const userType ={
 //         userType : userType
 //     }
-//     const url = `http://localhost:5000/${email}`
+//     const url = `https://assignement-12-server.vercel.app/${email}`
 
 import { useEffect, useState } from "react"
 
@@ -24,7 +24,7 @@ export const useUserType = email => {
   useEffect(()=>{
     setLoading(true)
    if(email){
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://assignement-12-server.vercel.app/user/${email}`)
     .then(res => res.json())
     .then(data => {
       setUserType(data.userType)

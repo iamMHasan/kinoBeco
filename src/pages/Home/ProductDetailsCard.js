@@ -21,7 +21,7 @@ const ProductDetailsCard = ({ productDetails, setSelectedProduct }) => {
             image,
             resalePrice,
         }
-        fetch(`http://localhost:5000/wishlist`,{
+        fetch(`https://assignement-12-server.vercel.app/wishlist`,{
             method : 'POST',
             headers : {
                 'content-type' : 'application/json'

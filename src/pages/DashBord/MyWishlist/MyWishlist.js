@@ -13,7 +13,7 @@ const MyWishlist = () => {
     const { data: wishlist = [],refetch , isLoading} = useQuery({
         queryKey: ['wishlist', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/wishlist?email=${user?.email}`,{
+            const res = await fetch(`https://assignement-12-server.vercel.app/wishlist?email=${user?.email}`,{
                 headers : {
                      authorization : `bearer ${localStorage.getItem('kenoBeco')}`
                 }
@@ -23,7 +23,7 @@ const MyWishlist = () => {
         }
     })
     // useEffect(()=>{
-    //     fetch(`http://localhost:5000/wishlist?email=${user?.email}`,{
+    //     fetch(`https://assignement-12-server.vercel.app/wishlist?email=${user?.email}`,{
     //             headers : {
     //                  authorization : `bearer ${localStorage.getItem('kenoBeco')}`
     //             }
@@ -32,7 +32,7 @@ const MyWishlist = () => {
     //         .then(data => setWishlist(data) )
     // },[user?.email])
     const handleDeleteOrder = id =>{
-        fetch(`http://localhost:5000/wishlist/${id}`,{
+        fetch(`https://assignement-12-server.vercel.app/wishlist/${id}`,{
             method : 'DELETE'
         })
         .then(res => res.json())

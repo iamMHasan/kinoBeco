@@ -22,19 +22,23 @@ const AddaProducts = () => {
         const condition = form.condition.value
         const productName = form.category.value
         const image = form.file.files[0]
+        const postedDate = new Date()
+        postedDate.toDateString()
         // console.log(productName, mobile, location, purcahseyear, description, condition,category);
         console.log(image);
-
         const picform = new FormData()
         picform.append('image', image )
-
         fetch("https://api.imgbb.com/1/upload?key=6fe1164c2c0eeca68905e318bf8d48ca",{
             method : 'POST',
             body : picform
         })
         .then(res => res.json())
         .then(data =>{
+            console.log('this is url', data.url);
+            console.log(data.data.url);
             const addproductInfo = {
+                prdImage : data?.data?.url,
+                isAdvertised : false,
                 Prdname,
                 mobile,
                 location,
@@ -42,11 +46,11 @@ const AddaProducts = () => {
                 description,
                 condition,
                 productName,
-                postedDate : new Date(),
+                postedDate,
                 email : user?.email,
-                picform : data.url
             }
-            fetch(`http://localhost:5000/addAproduct`,{
+           if(data.success === true){
+            fetch(`https://assignement-12-server.vercel.app/addAproduct`,{
                 method : 'POST',
                 headers : {
                     'content-type' : 'application/json'
@@ -64,6 +68,7 @@ const AddaProducts = () => {
                 console.log(err);
                 setLoading(false)
             })
+           }
         })
     }
     return (

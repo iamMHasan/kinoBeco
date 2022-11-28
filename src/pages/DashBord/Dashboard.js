@@ -12,7 +12,7 @@ const Dashboard = () => {
     const { data: myAllOrder = [],refetch, isLoading } = useQuery({
         queryKey: ['myOrders'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myOrders?email=${user?.email}`,{
+            const res = await fetch(`https://assignement-12-server.vercel.app/myOrders?email=${user?.email}`,{
                 headers : {
                      authorization : `bearer ${localStorage.getItem('kenoBeco')}`
                 }
@@ -22,7 +22,7 @@ const Dashboard = () => {
         }
     })
     const handleDeleteOrder = id =>{
-        fetch(`http://localhost:5000/myOrders/${id}`,{
+        fetch(`https://assignement-12-server.vercel.app/myOrders/${id}`,{
             method : 'DELETE'
         })
         .then(res => res.json())

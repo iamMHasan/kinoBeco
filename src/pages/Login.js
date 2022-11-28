@@ -27,7 +27,7 @@ const Login = () => {
                 email :user.email
             }
           // Get Token
-          fetch('http://localhost:5000/users',{
+          fetch('https://assignement-12-server.vercel.app/users',{
                     method : 'POST',
                     headers : {
                         'content-type' : 'application/json'
@@ -66,7 +66,7 @@ const Login = () => {
                     userType : 'Buyer',
                     displayName : user?.displayName,
                 }
-                fetch('http://localhost:5000/users',{
+                fetch('https://assignement-12-server.vercel.app/users',{
                     method : 'POST',
                     headers : {
                         'content-type' : 'application/json'
