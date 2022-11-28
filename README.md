@@ -5,6 +5,7 @@ adminPassword- 123456
 
 
 ## Live site https://kinobeco.firebaseapp.com/
+The site is loading slow for some unknown reason(Please leave a feedback if there is a chance why this happens usually ): Thanks for your patience when reviwing this.
 
 ## Features
 
