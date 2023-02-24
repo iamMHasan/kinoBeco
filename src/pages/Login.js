@@ -7,6 +7,7 @@ import { setAuthToken } from '../api/user';
 import Spinner from '../spinner/Spinner';
 
 const Login = () => {
+    const {user} = useContext(AuthContext)
     const [error, setError] = useState('')
     const {signin,setLoading,loading, signInWithGoogle} = useContext(AuthContext)
     const location = useLocation()
@@ -27,8 +28,8 @@ const Login = () => {
                 email :user.email
             }
           // Get Token
-          fetch('https://assignement-12-server.vercel.app/users',{
-                    method : 'POST',
+          fetch(`http://localhost:5000/users/${user?.email}`,{
+                    method : 'PUT',
                     headers : {
                         'content-type' : 'application/json'
                     },
@@ -66,7 +67,7 @@ const Login = () => {
                     userType : 'Buyer',
                     displayName : user?.displayName,
                 }
-                fetch('https://assignement-12-server.vercel.app/users',{
+                fetch('http://localhost:5000/users',{
                     method : 'POST',
                     headers : {
                         'content-type' : 'application/json'

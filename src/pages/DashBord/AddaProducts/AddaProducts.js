@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -8,68 +8,77 @@ import Spinner from '../../../spinner/Spinner';
 
 const AddaProducts = () => {
     const [loading, setLoading] = useState(false)
+    const [selectedCategory, setSelectedCategory] = useState('');
     const navigate = useNavigate()
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+    const [products, setProducts] = useState([])
+    // all product
+    useEffect(() => {
+        fetch("http://localhost:5000/allProducts")
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+    // get unique cata
+    const uniqueCata = [...new Set(products.map(item => item.category))];
+
     const handleAddProduct = e => {
         setLoading(true)
         e.preventDefault()
         const form = e.target
-        const Prdname = form.Prdname.value
-        const mobile = form.mobile.value
+        const productName = form.Prdname.value
         const location = form.location.value
-        const purcahseyear = form.purcahseyear.value
+        const resalePrice = form.rprice.value
+        const originalPrice = form.oprice.value
+        const sellerName = user?.displayName
         const description = form.description.value
-        const condition = form.condition.value
-        const productName = form.category.value
         const image = form.file.files[0]
-        const postedDate = new Date()
-        postedDate.toDateString()
-        // console.log(productName, mobile, location, purcahseyear, description, condition,category);
-        console.log(image);
+        const category = selectedCategory
+        console.log(productName, resalePrice, description, location, originalPrice, sellerName, category);
         const picform = new FormData()
-        picform.append('image', image )
-        fetch("https://api.imgbb.com/1/upload?key=6fe1164c2c0eeca68905e318bf8d48ca",{
-            method : 'POST',
-            body : picform
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log('this is url', data.url);
-            console.log(data.data.url);
-            const addproductInfo = {
-                prdImage : data?.data?.url,
-                isAdvertised : false,
-                Prdname,
-                mobile,
-                location,
-                purcahseyear,
-                description,
-                condition,
-                productName,
-                postedDate,
-                email : user?.email,
-            }
-           if(data.success === true){
-            fetch(`https://assignement-12-server.vercel.app/addAproduct`,{
-                method : 'POST',
-                headers : {
-                    'content-type' : 'application/json'
-                },
-                body : JSON.stringify(addproductInfo)
+        picform.append('image', image)
+        if (selectedCategory) {
+            fetch("https://api.imgbb.com/1/upload?key=e0f610ef6061d376338a241ce664db2f", {
+                method: 'POST',
+                body: picform
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                toast.success('Proudct added successfully')
-                navigate("/dashboard/myproducts")
-                setLoading(false)
-            })
-            .catch(err => {
-                console.log(err);
-                setLoading(false)
-            })
-           }
-        })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data.data.url)
+                    const addproductInfo = {
+                        category,
+                        productName,
+                        image: data?.data?.url,
+                        isAdvertised: false,
+                        location,
+                        email: user?.email,
+                        originalPrice,
+                        resalePrice,
+                        sellerName
+                    }
+                    if (data.success === true) {
+                        fetch(`http://localhost:5000/addAproduct`, {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(addproductInfo)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data);
+                                toast.success('Proudct added successfully')
+                                navigate("/dashboard/myproducts")
+                                setLoading(false)
+                            })
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    setLoading(false)
+                })
+        } else {
+            toast.error('Select a category')
+        }
     }
     return (
         <>
@@ -77,63 +86,53 @@ const AddaProducts = () => {
             <form onSubmit={handleAddProduct}>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Product Name</label>
-                    <input type="text" name='Prdname' placeholder="product" className="input input-bordered input-accent w-full mt-1" />
-                </div>
-                <div className='flex flex-col py-2'>
-                    <label htmlFor="">Mobile Number</label>
-                    <input type="text" name='mobile' placeholder="number" className="input input-bordered input-accent w-full mt-1" />
+                    <input required type="text" name='Prdname' placeholder="product" className="input input-bordered input-accent w-full mt-1" />
                 </div>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Location</label>
-                    <input type="text" placeholder="location" name='location' className="input input-bordered input-accent w-full mt-1" />
+                    <input required type="text" placeholder="location" name='location' className="input input-bordered input-accent w-full mt-1" />
                 </div>
                 <div className='flex flex-col py-2'>
-                    <label htmlFor="">Year of purchase</label>
-                    <input type="number" placeholder="purcahse year" name='purcahseyear' className="input input-bordered input-accent w-full mt-1" />
+                    <label htmlFor="">Price</label>
+                    <div className="flex gap-2">
+                        <input required type="number" placeholder="Original Price" name='oprice' className="input input-bordered input-accent w-full mt-1" />
+                        <input required type="number" placeholder="Resell Price" name='rprice' className="input input-bordered input-accent w-full mt-1" />
+                    </div>
                 </div>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="">Descriptions</label>
-                    <textarea type="text" placeholder="description" name='description' className="input input-bordered input-accent w-full mt-1" />
-                </div>
-                <div className='flex flex-col py-2'>
-                    <label htmlFor="">Add a picture</label>
-                    <input accept="image/*" type="file" name='file'  />
-                </div>
-                <div className='flex flex-col py-2'>
-                    <label htmlFor="">Select condition</label>
-                    <div className="flex gap-3">
-                        <span>
-                            <input required type="radio" name="condition" value="Excellent" />
-                            <label className="ml-2 mr-2">Excellent</label>
-                        </span>
-                        <span>
-                            <input required type="radio" name="condition" value="Fair" />
-                            <label className="ml-2 mr-2">Fair</label>
-                        </span>
-                        <span >
-                            <input className="ml-2 mr-2" required type="radio" name="condition" value="Medium" />
-                            <label>Medium</label>
-                        </span>
-                    </div>
+                    <textarea required type="text" placeholder="description" name='description' className="input input-bordered input-accent w-full mt-1" />
                 </div>
                 <div className='flex flex-col py-2'>
                     <label htmlFor="category">Select Category</label>
-                    <div className="flex gap-3">
-                        <span>
-                            <input required type="radio" name="category" value="Mount Bike" />
-                            <label className="ml-2 mr-2">Mount Bike</label>
-                        </span>
-                        <span>
-                            <input required type="radio" name="category" value="Road Bike" />
-                            <label className="ml-2 mr-2">Road Bike</label>
-                        </span>
-                        <span >
-                            <input className="ml-2 mr-2" required type="radio" name="category" value="Folding Bike" />
-                            <label>Fold Bike</label>
-                        </span>
+                    {/* <select required className='input input-bordered input-accent w-full mt-1' oncl={(e) => handleCategoryChange(e.target.value)}>
+                        {uniqueCata.map((category) => (
+                            <option key={category} value={category}>
+                                {category}
+                            </option>
+                        ))}
+                    </select> */}
+                    <div className='flex items-center gap-4'>
+                        {uniqueCata.map((category) => (
+                            <label required key={category}>
+                                <input
+                                    required
+                                    className='mr-1'
+                                    type="radio"
+                                    value={category}
+                                    checked={selectedCategory === category}
+                                    onClick={(e) => setSelectedCategory(e.target.value)}
+                                />
+                                {category}
+                            </label>
+                        ))}
                     </div>
                 </div>
-                <button className="btn btn-dark">{loading ? <Spinner/> : 'Submit'}</button>
+                <div className='flex flex-col py-2'>
+                    <label htmlFor="">Add a picture</label>
+                    <input required accept="image/*" type="file" name='file' />
+                </div>
+                <button className="btn btn-dark">{loading ? 'Submit..': 'Submit'}</button>
             </form>
         </>
     );

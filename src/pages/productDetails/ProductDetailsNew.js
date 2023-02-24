@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 import { IoIosMan } from 'react-icons/io';
 import { AuthContext } from '../../context/Authprovider';
@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 const ProductDetailsNew = () => {
     const [loading, setLoading] = useState(false)
     const [isButtonClicked, setIsButtonClicked] = useState(false);
+    const navigate = useNavigate()
     const { user } = useContext(AuthContext)
     const data = useLoaderData()
     const { image, productName, resalePrice, originalPrice, sellerName, _id } = data
@@ -37,6 +38,7 @@ const ProductDetailsNew = () => {
                 setLoading(false)
                 setIsButtonClicked(true)
                 toast.success('product added to wishlist')
+                navigate('/dashboard/mywishlist')
             })
             .catch(err => console.log(err))
     }

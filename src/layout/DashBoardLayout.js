@@ -5,6 +5,7 @@ import { AuthContext } from '../context/Authprovider';
 import useTitle from '../hooks/useTitle';
 import Welcome from '../pages/DashBord/Welcome';
 import Navbar from '../shared/Navbar';
+import Spinner from '../spinner/Spinner';
 
 const DashBoardLayout = () => {
     useTitle('Dashboard')
@@ -14,7 +15,7 @@ const DashBoardLayout = () => {
 
     return (
         <div className="drawer drawer-mobile">
-           {loading ? <div className='flex justify-center items-center text-xl'>'loading dashboard........'</div> : (
+           {loading ? <div className=' mx-auto text-center border-white'>loading</div> : (
             <>
              <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
@@ -29,7 +30,7 @@ const DashBoardLayout = () => {
                     {
                         usertype === 'Buyer' && (
                             <>
-                                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                                {/* <li><Link to='/dashboard/myorders'>My Orders</Link></li> */}
                                 <li><Link to='/dashboard/mywishlist'>My Wishlist</Link></li>
                             </>
                         )
@@ -46,7 +47,7 @@ const DashBoardLayout = () => {
                         usertype === 'admin' && (
                             <>
                                 {/* <li><Link to='/dashboard/allUsers'>All Users</Link></li> */}
-                                <li><Link to='/dashboard/myorders'>My orders</Link></li>
+                                {/* <li><Link to='/dashboard/myorders'>My orders</Link></li> */}
                                 <li><Link to='/dashboard/myproducts'>My Products</Link></li>
                                 <li><Link to='/dashboard/addaproduct'>Add A Product</Link></li>
                                 <li><Link to='/dashboard/allBuyers'>All Buyers</Link></li>

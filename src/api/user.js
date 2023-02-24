@@ -24,7 +24,7 @@ export const useUserType = email => {
   useEffect(()=>{
     setLoading(true)
    if(email){
-    fetch(`https://assignement-12-server.vercel.app/user/${email}`)
+    fetch(`http://localhost:5000/users/${email}`)
     .then(res => res.json())
     .then(data => {
       setUserType(data.userType)

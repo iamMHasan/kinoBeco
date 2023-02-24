@@ -10,7 +10,7 @@ const MyProducts = () => {
     const { data: myproducts = [], refetch, isLoading } = useQuery({
         queryKey: [],
         queryFn: async () => {
-            const res = await fetch(`https://assignement-12-server.vercel.app/addAproduct?email=${user?.email}`,{
+            const res = await fetch(`http://localhost:5000/addAproduct?email=${user?.email}`,{
                 headers : {
                     authorization : `bearer ${localStorage.getItem('kenoBeco')}`
                 }
@@ -21,7 +21,7 @@ const MyProducts = () => {
     })
 
     const handleDelete = id => {
-        fetch(`https://assignement-12-server.vercel.app/addAproduct/${id}`, {
+        fetch(`http://localhost:5000/addAproduct/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -64,20 +64,6 @@ const MyProducts = () => {
                     console.log(data);
                     toast.success('advertise item successfull')
                     refetch()
-                    // fetch(`https://assignement-12-server.vercel.app/addAproduct/${id}`,{
-                    //     method : 'PUT',
-                    //     headers : {
-                    //         'content-type' : 'application/json'
-                    //     }
-                    //     // body : JSON.stringify(data)
-                    //     .then(res => res.json())
-                    //     .then(data =>{
-                    //         toast.success('advertise item successfull')
-                    //         console.log(data);
-                    //         refetch()
-                    //     })
-                    // })
-                    // .then(res => res.json())
                 })
                 .catch(err => console.log(err))
 
@@ -107,8 +93,8 @@ const MyProducts = () => {
 
                             <tr key={product._id}>
                                 <th>{i + 1}</th>
-                                <td>{product.Prdname}</td>
                                 <td>{product.productName}</td>
+                                <td>{product.category}</td>
                                 <td>{product.email}</td>
                                 <td><>
                                     <p className='badge badge-ghost badge-sm'>Available</p>

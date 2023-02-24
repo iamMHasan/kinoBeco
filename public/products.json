@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "category": "Mount Bike",
         "productName": "DRUID XT",
         "resalePrice": 12000,
@@ -9,7 +8,6 @@
         "sellerName": "Abu Mia"
     },
     {
-        "id": 2,
         "category": "Mount Bike",
         "productName": "Canyon Spectral",
         "resalePrice": 13000,
@@ -18,7 +16,6 @@
         "sellerName": "Bob Smith"
     },
     {
-        "id": 3,
         "category": "Mount Bike",
         "productName": "Santa Cruz Nomad",
         "resalePrice": 14000,
@@ -27,7 +24,6 @@
         "sellerName": "Chris Johnson"
     },
     {
-        "id": 4,
         "category": "Mount Bike",
         "productName": "Yeti SB130",
         "resalePrice": 15000,
@@ -36,7 +32,6 @@
         "sellerName": "David Brown"
     },
     {
-        "id": 5,
         "category": "Mount Bike",
         "productName": "Ibis Ripmo",
         "resalePrice": 16000,
@@ -45,7 +40,6 @@
         "sellerName": "Ellie Smith"
     },
     {
-        "id": 6,
         "category": "Mount Bike",
         "productName": "Specialized Enduro",
         "resalePrice": 17000,
@@ -54,7 +48,6 @@
         "sellerName": "Frank Chen"
     },
     {
-        "id": 7,
         "category": "Mount Bike",
         "productName": "Trek Slash",
         "resalePrice": 18000,
@@ -63,7 +56,6 @@
         "sellerName": "George Lee"
     },
     {
-        "id": 8,
         "category": "Mount Bike",
         "productName": "Yeti SB150",
         "resalePrice": 19000,
@@ -72,7 +64,6 @@
         "sellerName": "Hannah Kim"
     },
     {
-        "id": 10,
         "category": "Road Bike",
         "productName": "Specialized Roubaix",
         "resalePrice": 9000,
@@ -81,7 +72,6 @@
         "sellerName": "Jasmine Smith"
     },
     {
-        "id": 11,
         "category": "Road Bike",
         "productName": "Cannondale SuperSix",
         "resalePrice": 10000,
@@ -90,7 +80,6 @@
         "sellerName": "Katie Brown"
     },
     {
-        "id": 12,
         "category": "Road Bike",
         "productName": "Giant TCR Advanced",
         "resalePrice": 11000,
@@ -99,7 +88,6 @@
         "sellerName": "Liam Lee"
     },
     {
-        "id": 13,
         "category": "Road Bike",
         "productName": "Pinarello Dogma",
         "resalePrice": 12000,
@@ -108,7 +96,6 @@
         "sellerName": "Max Kim"
     },
     {
-        "id": 14,
         "category": "Road Bike",
         "productName": "Cervelo R5",
         "resalePrice": 13000,
@@ -117,7 +104,6 @@
         "sellerName": "Nadia Chen"
     },
     {
-        "id": 15,
         "category": "Road Bike",
         "productName": "BMC Teammachine",
         "resalePrice": 14000,
@@ -126,7 +112,6 @@
         "sellerName": "Oliver Smith"
     },
     {
-        "id": 16,
         "category": "Road Bike",
         "productName": "Scott Addict",
         "resalePrice": 15000,
@@ -135,7 +120,6 @@
         "sellerName": "Peter Brown"
     },
     {
-        "id": 17,
         "category": "Electric Bike",
         "productName": "Specialized Turbo Vado",
         "resalePrice": 5000,
@@ -144,7 +128,6 @@
         "sellerName": "Quincy Lee"
     },
     {
-        "id": 18,
         "category": "Electric Bike",
         "productName": "Trek Super Commuter+",
         "resalePrice": 6000,
@@ -153,7 +136,6 @@
         "sellerName": "Rachel Kim"
     },
     {
-        "id": 19,
         "category": "Electric Bike",
         "productName": "Giant Quick-E+",
         "resalePrice": 7000,
@@ -162,7 +144,6 @@
         "sellerName": "Steven Johnson"
     },
     {
-        "id": 21,
         "category": "Kids Bike",
         "productName": "Strider 12 Sport",
         "resalePrice": 50,
@@ -171,7 +152,6 @@
         "sellerName": "Victor Hernandez"
     },
     {
-        "id": 22,
         "category": "Kids Bike",
         "productName": "Woom 1 Plus",
         "resalePrice": 80,
@@ -180,7 +160,6 @@
         "sellerName": "William Lee"
     },
     {
-        "id": 23,
         "category": "Kids Bike",
         "productName": "Prevelo Alpha Zero",
         "resalePrice": 100,
@@ -189,7 +168,6 @@
         "sellerName": "Xander Brown"
     },
     {
-        "id": 24,
         "category": "Kids Bike",
         "productName": "Frog 43",
         "resalePrice": 120,
@@ -198,7 +176,6 @@
         "sellerName": "Yara Garcia"
     },
     {
-        "id": 25,
         "category": "Kids Bike",
         "productName": "Cleary Gecko",
         "resalePrice": 150,
@@ -207,7 +184,6 @@
         "sellerName": "Zachary Smith"
     },
     {
-        "id": 26,
         "category": "Kids Bike",
         "productName": "Guardian Ethos",
         "resalePrice": 180,
@@ -216,7 +192,6 @@
         "sellerName": "Abby Wilson"
     },
     {
-        "id": 27,
         "category": "Kids Bike",
         "productName": "Pello Reddi",
         "resalePrice": 200,

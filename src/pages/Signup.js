@@ -32,7 +32,7 @@ const Signup = () => {
             }
             updateUserProfile(name)
             .then(()=>{
-                fetch('https://assignement-12-server.vercel.app/users',{
+                fetch('http://localhost:5000/users',{
                     method : 'POST',
                     headers : {
                         'content-type' : 'application/json'
@@ -69,7 +69,7 @@ const Signup = () => {
                     userType : 'Buyer',
                     displayName : user?.displayName,
                 }
-                fetch('https://assignement-12-server.vercel.app/users',{
+                fetch('http://localhost:5000/users',{
                     method : 'POST',
                     headers : {
                         'content-type' : 'application/json'

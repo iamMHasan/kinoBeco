@@ -64,8 +64,8 @@ const MyWishlist = () => {
                         </th>
                         <th>{myOrders.productName}</th>
                         <th>{myOrders.resalePrice}</th>
-                        <th><div className="btn btn-ghost">Book Now</div></th>
-                        <th><div onClick={()=>handleDeleteOrder(myOrders._id)} className="btn  btn-xs">{loading ? 'delete....' : 'delete'}</div></th>
+                        <th className=''><div className="btn btn-xs mr-1">Pay Now</div>
+                        <div onClick={()=>handleDeleteOrder(myOrders._id)} className="btn  btn-xs">{loading ? 'delete....' : 'delete'}</div> </th>
                     </tr>
                 ))
             }
