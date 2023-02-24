@@ -1,0 +1,229 @@
+
+[
+    {
+      "id": 1,
+      "category": "Mount Bike",
+      "productName": "DRUID XT",
+      "resalePrice": 12000,
+      "originalPrice": 20000,
+      "image": "https://thumbs.dreamstime.com/b/modern-bicycle-white-background-modern-bicycle-white-background-healthy-lifestyle-157216125.jpg",
+      "sellerName": "Abu Mia"
+    },
+    {
+      "id": 2,
+      "category": "Mount Bike",
+      "productName": "Canyon Spectral",
+      "resalePrice": 13000,
+      "originalPrice": 21000,
+      "image": "https://static.vecteezy.com/system/resources/previews/000/824/435/large_2x/blue-mountain-bike-isolated-over-white-background-photo.jpg",
+      "sellerName": "Bob Smith"
+    },
+    {
+      "id": 3,
+      "category": "Mount Bike",
+      "productName": "Santa Cruz Nomad",
+      "resalePrice": 14000,
+      "originalPrice": 23000,
+      "image": "https://media.istockphoto.com/id/614968352/photo/mountain-bike-isolated-on-white-background-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=9NCjRgH8ymkFSyJi-lYQDbfsJSy7mwPbgY8T_Jdz6AI=",
+      "sellerName": "Chris Johnson"
+    },
+    {
+      "id": 4,
+      "category": "Mount Bike",
+      "productName": "Yeti SB130",
+      "resalePrice": 15000,
+      "originalPrice": 25000,
+      "image": "https://www.bikester.co.uk/fileadmin/user_upload/bike-types/mountain-bikes.jpg",
+      "sellerName": "David Brown"
+    },
+    {
+      "id": 5,
+      "category": "Mount Bike",
+      "productName": "Ibis Ripmo",
+      "resalePrice": 16000,
+      "originalPrice": 27000,
+      "image": "https://www.bikester.co.uk/fileadmin/user_upload/bike-types/mountain-bikes.jpg",
+      "sellerName": "Ellie Smith"
+    },
+    {
+      "id": 6,
+      "category": "Mount Bike",
+      "productName": "Specialized Enduro",
+      "resalePrice": 17000,
+      "originalPrice": 29000,
+      "image": "https://www.bikester.co.uk/fileadmin/user_upload/bike-types/mountain-bikes.jpg",
+      "sellerName": "Frank Chen"
+    },
+    {
+      "id": 7,
+      "category": "Mount Bike",
+      "productName": "Trek Slash",
+      "resalePrice": 18000,
+      "originalPrice": 31000,
+      "image": "https://www.bikester.co.uk/fileadmin/user_upload/bike-types/mountain-bikes.jpg",
+      "sellerName": "George Lee"
+    },
+    {
+      "id": 8,
+      "category": "Mount Bike",
+      "productName": "Yeti SB150",
+      "resalePrice": 19000,
+      "originalPrice": 33000,
+      "image": "https://www.bikester.co.uk/fileadmin/user_upload/bike-types/mountain-bikes.jpg",
+      "sellerName": "Hannah Kim"
+    },
+    {
+        "id": 10,
+        "category": "Road Bike",
+        "productName": "Specialized Roubaix",
+        "resalePrice": 9000,
+        "originalPrice": 15000,
+        "image": "",
+        "sellerName": "Jasmine Smith"
+        },
+        {
+        "id": 11,
+        "category": "Road Bike",
+        "productName": "Cannondale SuperSix",
+        "resalePrice": 10000,
+        "originalPrice": 17000,
+        "image": "",
+        "sellerName": "Katie Brown"
+        },
+        {
+        "id": 12,
+        "category": "Road Bike",
+        "productName": "Giant TCR Advanced",
+        "resalePrice": 11000,
+        "originalPrice": 19000,
+        "image": "",
+        "sellerName": "Liam Lee"
+        },
+        {
+        "id": 13,
+        "category": "Road Bike",
+        "productName": "Pinarello Dogma",
+        "resalePrice": 12000,
+        "originalPrice": 21000,
+        "image": "",
+        "sellerName": "Max Kim"
+        },
+        {
+        "id": 14,
+        "category": "Road Bike",
+        "productName": "Cervelo R5",
+        "resalePrice": 13000,
+        "originalPrice": 23000,
+        "image": "",
+        "sellerName": "Nadia Chen"
+        },
+        {
+        "id": 15,
+        "category": "Road Bike",
+        "productName": "BMC Teammachine",
+        "resalePrice": 14000,
+        "originalPrice": 25000,
+        "image": "",
+        "sellerName": "Oliver Smith"
+        },
+        {
+        "id": 16,
+        "category": "Road Bike",
+        "productName": "Scott Addict",
+        "resalePrice": 15000,
+        "originalPrice": 27000,
+        "image": "",
+        "sellerName": "Peter Brown"
+        },
+        {
+        "id": 17,
+        "category": "Electric Bike",
+        "productName": "Specialized Turbo Vado",
+        "resalePrice": 5000,
+        "originalPrice": 8000,
+        "image": "https://cdn.pixabay.com/photo/2020/09/17/09/02/e-bike-5579794_960_720.jpg",
+        "sellerName": "Quincy Lee"
+        },
+        {
+        "id": 18,
+        "category": "Electric Bike",
+        "productName": "Trek Super Commuter+",
+        "resalePrice": 6000,
+        "originalPrice": 9000,
+        "image": "https://cdn.pixabay.com/photo/2017/01/24/12/31/e-bike-2007079_960_720.jpg",
+        "sellerName": "Rachel Kim"
+        },
+        {
+        "id": 19,
+        "category": "Electric Bike",
+        "productName": "Giant Quick-E+",
+        "resalePrice": 7000,
+        "originalPrice": 10000,
+        "image": "https://cdn.pixabay.com/photo/2017/07/11/21/05/ebike-2492289_960_720.jpg",
+        "sellerName": "Steven Johnson"
+        },
+        {
+            "id": 21,
+            "category": "Kids Bike",
+            "productName": "Strider 12 Sport",
+            "resalePrice": 50,
+            "originalPrice": 100,
+            "image": "https://cdn.pixabay.com/photo/2016/04/02/11/21/bicycle-1303315_960_720.png",
+            "sellerName": "Victor Hernandez"
+            },
+            {
+            "id": 22,
+            "category": "Kids Bike",
+            "productName": "Woom 1 Plus",
+            "resalePrice": 80,
+            "originalPrice": 120,
+            "image": "https://cdn.pixabay.com/photo/2017/09/11/17/12/bicycle-2735383_960_720.png",
+            "sellerName": "William Lee"
+            },
+            {
+            "id": 23,
+            "category": "Kids Bike",
+            "productName": "Prevelo Alpha Zero",
+            "resalePrice": 100,
+            "originalPrice": 150,
+            "image": "https://cdn.pixabay.com/photo/2016/08/22/08/54/bicycle-1618347_960_720.png",
+            "sellerName": "Xander Brown"
+            },
+            {
+            "id": 24,
+            "category": "Kids Bike",
+            "productName": "Frog 43",
+            "resalePrice": 120,
+            "originalPrice": 180,
+            "image": "https://cdn.pixabay.com/photo/2015/12/07/17/43/kids-bike-1082142_960_720.png",
+            "sellerName": "Yara Garcia"
+            },
+            {
+            "id": 25,
+            "category": "Kids Bike",
+            "productName": "Cleary Gecko",
+            "resalePrice": 150,
+            "originalPrice": 220,
+            "image": "https://cdn.pixabay.com/photo/2017/07/14/16/34/kids-bicycle-2508399_960_720.png",
+            "sellerName": "Zachary Smith"
+            },
+            {
+            "id": 26,
+            "category": "Kids Bike",
+            "productName": "Guardian Ethos",
+            "resalePrice": 180,
+            "originalPrice": 260,
+            "image": "https://cdn.pixabay.com/photo/2017/03/06/15/30/kids-bike-2123738_960_720.png",
+            "sellerName": "Abby Wilson"
+            },
+            {
+            "id": 27,
+            "category": "Kids Bike",
+            "productName": "Pello Reddi",
+            "resalePrice": 200,
+            "originalPrice": 300,
+            "image": "https://cdn.pixabay.com/photo/2017/04/23/19/29/kids-bike-2253899_960_720.png",
+            "sellerName": "Brandon Davis"
+            }
+]
+  

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import HeadingText from '../../component/Heading text/HeadingText';
 import ProudctCataCard from './ProudctCataCard';
 
 const ProductCatagory = () => {
@@ -20,7 +21,7 @@ const ProductCatagory = () => {
             {
                 loading ? <div className='text-2xl text-center'>'loading category please wait'</div> : (
                     <>
-                        <h1 className="text-3xl md:text-4xl my-10 text-center font-bold">Find a suitable <br className='hidden md:block' /> <span className='font-5xl text-green-700 font-thin'> cycle </span> for you</h1>
+                        <HeadingText main={'BROWSE TOP CATEGORY'} title={'Find best cycle for you'}></HeadingText>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                             {
                                 allCategories.map(categories => <ProudctCataCard

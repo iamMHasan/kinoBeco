@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react';
-import img1 from '../../image/img1-01.jpg'
-import img2 from '../../image/img2.jpg'
-import img3 from '../../image/img3.jpg'
 import bike1 from '../../image/bike1.jpg'
 import bike2 from '../../image/bike2.jpg'
 
