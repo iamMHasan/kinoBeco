@@ -8,31 +8,23 @@ import { useState } from 'react';
 
 const MyWishlist = () => {
     useTitle('Mywishlist')
-    // const [wishlist, setWishlist] = useState([])
     const { user } = useContext(AuthContext)
+    const [loading, setLoading] = useState(false)
     const { data: wishlist = [],refetch , isLoading} = useQuery({
-        queryKey: ['wishlist', user?.email],
+        queryKey: ['addToCart', user?.email],
         queryFn: async () => {
-            const res = await fetch(`https://assignement-12-server.vercel.app/wishlist?email=${user?.email}`,{
-                headers : {
-                     authorization : `bearer ${localStorage.getItem('kenoBeco')}`
-                }
+            const res = await fetch(`http://localhost:5000/addToCart?email=${user?.email}`,{
+                // headers : {
+                //      authorization : `bearer ${localStorage.getItem('kenoBeco')}`
+                // }
             })
             const data = await res.json()
             return data
         }
     })
-    // useEffect(()=>{
-    //     fetch(`https://assignement-12-server.vercel.app/wishlist?email=${user?.email}`,{
-    //             headers : {
-    //                  authorization : `bearer ${localStorage.getItem('kenoBeco')}`
-    //             }
-    //         })
-    //         .then(res => res.json())
-    //         .then(data => setWishlist(data) )
-    // },[user?.email])
     const handleDeleteOrder = id =>{
-        fetch(`https://assignement-12-server.vercel.app/wishlist/${id}`,{
+        setLoading(true)
+        fetch(`http://localhost:5000/addToCart/${id}`,{
             method : 'DELETE'
         })
         .then(res => res.json())
@@ -40,6 +32,7 @@ const MyWishlist = () => {
             console.log(data);
             toast.success('order deleted')
             refetch()
+            setLoading(false)
         })
         .catch(err => console.log(err))
     }
@@ -69,10 +62,10 @@ const MyWishlist = () => {
                                 </div>
                             </div>
                         </th>
-                        <th>{myOrders.name}</th>
+                        <th>{myOrders.productName}</th>
                         <th>{myOrders.resalePrice}</th>
                         <th><div className="btn btn-ghost">Book Now</div></th>
-                        <th><div onClick={()=>handleDeleteOrder(myOrders._id)} className="btn  btn-xs">delete</div></th>
+                        <th><div onClick={()=>handleDeleteOrder(myOrders._id)} className="btn  btn-xs">{loading ? 'delete....' : 'delete'}</div></th>
                     </tr>
                 ))
             }

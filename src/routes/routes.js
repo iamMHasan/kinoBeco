@@ -16,6 +16,7 @@ import Home from '../pages/Home/Home';
 import ProductDetails from '../pages/Home/ProductDetails';
 import ProudctCataCard from '../pages/Home/ProudctCataCard';
 import Login from '../pages/Login';
+import ProductDetailsNew from '../pages/productDetails/ProductDetailsNew'
 import Signup from '../pages/Signup';
 import PrivateRoute from '../privateRoute.js/PrivateRoute';
 import Error from '../shared/Error';
@@ -36,6 +37,11 @@ export const router = createBrowserRouter([
         path: '/allCategories/:id',
         element: <PrivateRoute><ProductDetails /></PrivateRoute>,
         loader : ({params}) => fetch(`https://assignement-12-server.vercel.app/allCategories/${params.id}`)
+      },
+      {
+        path : '/productDetails/:id',
+        element : <ProductDetailsNew/>,
+        loader : ({params}) => fetch(`http://localhost:5000/allProducts/${params.id}`)
       },
       {
         path: '/login',

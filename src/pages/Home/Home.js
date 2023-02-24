@@ -14,8 +14,8 @@ const Home = () => {
             <Carousel/>
             {/* <ProductCatagory/> */}
             <ProductMap/>
-            {/* <FeaturedBlog/>
-            <TopBrands/> */}
+            <FeaturedBlog/> 
+             <TopBrands/>
         </div>
     );
 };
