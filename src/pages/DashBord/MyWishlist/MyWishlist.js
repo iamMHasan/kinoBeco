@@ -13,7 +13,7 @@ const MyWishlist = () => {
     const { data: wishlist = [],refetch , isLoading} = useQuery({
         queryKey: ['addToCart', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/addToCart?email=${user?.email}`,{
+            const res = await fetch(`https://kinobeco-server.vercel.app/addToCart?email=${user?.email}`,{
                 // headers : {
                 //      authorization : `bearer ${localStorage.getItem('kenoBeco')}`
                 // }
@@ -24,7 +24,7 @@ const MyWishlist = () => {
     })
     const handleDeleteOrder = id =>{
         setLoading(true)
-        fetch(`http://localhost:5000/addToCart/${id}`,{
+        fetch(`https://kinobeco-server.vercel.app/addToCart/${id}`,{
             method : 'DELETE'
         })
         .then(res => res.json())

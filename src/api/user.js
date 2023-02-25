@@ -24,7 +24,7 @@ export const useUserType = email => {
   useEffect(()=>{
     setLoading(true)
    if(email){
-    fetch(`http://localhost:5000/users/${email}`)
+    fetch(`https://kinobeco-server.vercel.app/users/${email}`)
     .then(res => res.json())
     .then(data => {
       setUserType(data.userType)

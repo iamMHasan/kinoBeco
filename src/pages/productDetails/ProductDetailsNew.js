@@ -25,7 +25,7 @@ const ProductDetailsNew = () => {
             originalPrice
         }
 
-        fetch(`http://localhost:5000/addToCart`, {
+        fetch(`https://kinobeco-server.vercel.app/addToCart`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

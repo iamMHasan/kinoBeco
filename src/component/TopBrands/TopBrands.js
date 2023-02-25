@@ -6,9 +6,9 @@ import giant from '../../image/giant.png'
 import merida from '../../image/merida.png'
 import BrandImage from '../BrandImage/BrandImage'
 
-const TopBrands = ({ img }) => {
+const TopBrands = () => {
   return (
-    <div>
+    <div className='max-w-[100vw] overflow-y-hidden'>
       <HeadingText main={'Top Brands'} title={'Top brands are in our store'} />
       <div className="flex justify-center items-center bg-black gap-5">
         <BrandImage img={trek} />

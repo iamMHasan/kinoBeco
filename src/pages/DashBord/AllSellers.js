@@ -6,7 +6,7 @@ const AllSellers = () => {
     const { data: AllSellers = [], refetch, isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch(`https://assignement-12-server.vercel.app/users?userType=Seller`, {
+            const res = await fetch(`https://kinobeco-server.vercel.app/users?userType=Seller`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('kenoBeco')}`,
                 }
@@ -16,7 +16,7 @@ const AllSellers = () => {
         }
     })
     const handleDelete = (id) => {
-        fetch(`https://assignement-12-server.vercel.app/users/${id}`, {
+        fetch(`https://kinobeco-server.vercel.app/users/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const AllSellers = () => {
             .catch(err => console.log(err))
     }
     const handleMakeAdmin = id => {
-        fetch(`https://assignement-12-server.vercel.app/users/${id}`, {
+        fetch(`https://kinobeco-server.vercel.app/adminMake/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

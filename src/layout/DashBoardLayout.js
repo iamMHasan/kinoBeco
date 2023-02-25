@@ -39,6 +39,7 @@ const DashBoardLayout = () => {
                         usertype === 'Seller' && (
                             <>
                                 <li><Link to='/dashboard/myproducts'>My Products</Link></li>
+                                <li><Link to='/dashboard/mywishlist'>My Wishlist</Link></li>
                                 <li><Link to='/dashboard/addaproduct'>Add A Product</Link></li>
                             </>
                         )

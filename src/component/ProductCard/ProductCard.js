@@ -5,9 +5,9 @@ const ProductCard = ({ product }) => {
     const { image, resalePrice, originalPrice, productName, _id } = product
     return (
         <Link to={`/productDetails/${_id}`}>
-            <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500">
+            <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500 mx-auto">
                 <img src={image} alt='cycle' />
-                <div className="px-4 py-3 w-72">
+                <div className="md:px-4 md:py-3 w-72">
                     <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
                     <p className="text-lg font-bold text-black truncate block capitalize">{productName}</p>
                     <div className="flex items-center">

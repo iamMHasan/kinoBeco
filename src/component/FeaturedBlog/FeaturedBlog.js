@@ -19,7 +19,7 @@ const data = [
 const FeaturedBlog = () => {
     return (
         <div className='w-[90%] mx-auto font-Tilt'>
-            <HeadingText main={'Featured Blog'} title={'Read the latest blog'} />
+            <HeadingText main={'Featured'} title={'Read the latest blog'} />
             <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
 
                 {

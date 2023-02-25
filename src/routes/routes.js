@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
       {
         path : '/productDetails/:id',
         element : <ProductDetailsNew/>,
-        loader : ({params}) => fetch(`http://localhost:5000/allProducts/${params.id}`)
+        loader : ({params}) => fetch(`https://kinobeco-server.vercel.app/allProducts/${params.id}`)
       },
       {
         path: '/login',

@@ -10,7 +10,7 @@ const MyProducts = () => {
     const { data: myproducts = [], refetch, isLoading } = useQuery({
         queryKey: [],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/addAproduct?email=${user?.email}`,{
+            const res = await fetch(`https://kinobeco-server.vercel.app/addAproduct?email=${user?.email}`,{
                 headers : {
                     authorization : `bearer ${localStorage.getItem('kenoBeco')}`
                 }
@@ -21,7 +21,7 @@ const MyProducts = () => {
     })
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/addAproduct/${id}`, {
+        fetch(`https://kinobeco-server.vercel.app/addAproduct/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'

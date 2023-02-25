@@ -14,7 +14,7 @@ const AddaProducts = () => {
     const [products, setProducts] = useState([])
     // all product
     useEffect(() => {
-        fetch("http://localhost:5000/allProducts")
+        fetch("https://kinobeco-server.vercel.app/allProducts")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -56,7 +56,7 @@ const AddaProducts = () => {
                         sellerName
                     }
                     if (data.success === true) {
-                        fetch(`http://localhost:5000/addAproduct`, {
+                        fetch(`https://kinobeco-server.vercel.app/addAproduct`, {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
