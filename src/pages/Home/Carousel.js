@@ -35,10 +35,10 @@ const Carousel = () => {
           </div>
         </div>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle">
+          <a href="#slide4" className="border border-gray-500 rounded-full px-4 py-2 text-gray-500 hover:text-white hover:bg-gray-200">
             ❮
           </a>
-          <a href="#slide2" className="btn btn-circle">
+          <a href="#slide2" className="border border-gray-500 rounded-full px-4 py-2 text-gray-500 hover:text-white hover:bg-gray-200">
             ❯
           </a>
         </div>
@@ -67,10 +67,10 @@ const Carousel = () => {
           </div>
         </div>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
+          <a href="#slide1" className="border border-gray-500 rounded-full px-4 py-2 text-gray-500 hover:text-white hover:bg-gray-200">
             ❮
           </a>
-          <a href="#slide3" className="btn btn-circle">
+          <a href="#slide3" className="border border-gray-500 rounded-full px-4 py-2 text-gray-500 hover:text-white hover:bg-gray-200">
             ❯
           </a>
         </div>
