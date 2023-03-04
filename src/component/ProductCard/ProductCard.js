@@ -2,13 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ProductCard = ({ product }) => {
-    const { image, resalePrice, originalPrice, productName, _id } = product
+    const { image, resalePrice, originalPrice, productName, _id, category } = product
     return (
         <Link to={`/productDetails/${_id}`}>
-            <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500 mx-auto">
-                <img src={image} alt='cycle' />
-                <div className="md:px-4 md:py-3 w-72">
-                    <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
+            <div className="p-3 bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500 mx-auto w-72 h-96">
+                <img src={image} alt='cycle' className="w-full h-3/5 object-contain"/>
+                <div className="md:px-4 md:py-3 w-full text-start h-1/4">
+                    <div className="flex items-center justify-between">
+                        <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
+                        <div className="badge badge-secondary text-xs">{category}</div>
+                    </div>
                     <p className="text-lg font-bold text-black truncate block capitalize">{productName}</p>
                     <div className="flex items-center">
                         <p className="text-lg font-semibold text-black cursor-auto my-3">${resalePrice}</p>
