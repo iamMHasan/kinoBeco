@@ -5,10 +5,11 @@ import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../context/Authprovider';
 import Spinner from '../spinner/Spinner';
 import { useState } from 'react';
+import useTitle from '../hooks/useTitle';
 
 const Signup = () => {
+    useTitle('Signup')
     const [error, setError] = useState('')
-    const {user} = useContext(AuthContext)
     const { signInWithGoogle,createUser,updateUserProfile,loading, setLoading } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()

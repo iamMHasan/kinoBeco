@@ -5,8 +5,10 @@ import { AuthContext } from '../context/Authprovider';
 import toast from 'react-hot-toast';
 import { setAuthToken } from '../api/user';
 import Spinner from '../spinner/Spinner';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login')
     const { user } = useContext(AuthContext)
     const [error, setError] = useState('')
     const { signin, setLoading, loading, signInWithGoogle } = useContext(AuthContext)

@@ -4,8 +4,10 @@ import { AiFillStar } from 'react-icons/ai';
 import { IoIosMan } from 'react-icons/io';
 import { AuthContext } from '../../context/Authprovider';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const ProductDetailsNew = () => {
+    useTitle('Details')
     const [loading, setLoading] = useState(false)
     const [isButtonClicked, setIsButtonClicked] = useState(false);
     const navigate = useNavigate()
@@ -43,9 +45,9 @@ const ProductDetailsNew = () => {
             .catch(err => console.log(err))
     }
     return (
-        <div className='flex flex-col items-center md:flex-row gap-24 w-[90%] mx-auto my-14 h-full'>
-            <img src={image} alt="" className='flex-1' />
-            <div className='flex-1 space-y-3'>
+        <div className='flex flex-col items-center justify-center md:flex-row gap-24 w-[90%] mx-auto my-14 h-full'>
+            <img src={image} alt="" className='md:w-1/2' />
+            <div className='md:w-1/2 space-y-3'>
                 <div className="flex">
                     <AiFillStar size={26} className='text-yellow-300' />
                     <AiFillStar size={26} className='text-yellow-300' />

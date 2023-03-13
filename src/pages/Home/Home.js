@@ -12,9 +12,8 @@ const Home = () => {
     return (
         <div>
             <Carousel/>
-            {/* <ProductCatagory/> */}
             <ProductMap/>
-            {/* <FeaturedBlog/>  */}
+            <FeaturedBlog/> 
              <TopBrands/>
         </div>
     );
